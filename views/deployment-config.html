@@ -1,0 +1,32 @@
+<div>
+  <kubernetes-object-describe-header resource="resource"></kubernetes-object-describe-header>
+  <dl class="dl-horizontal">
+    <dt>Name</dt>
+    <dd>{{resource.metadata.name}}</dd>
+    <dt>Namespace</dt>
+    <dd>{{resource.metadata.namespace}}</dd>
+    <dt>Created</dt>
+    <dd>{{resource.metadata.creationTimestamp}}</dd>
+  </dl>
+  <h3>Triggers</h3>
+  <dl class="dl-horizontal" ng-repeat="trigger in resource.triggers">
+    <dt>Type</dt>
+    <dd>{{trigger.type}}</dd>
+    <dt ng-if-start="trigger.type == 'ImageChange'">Image</dt>
+    <dd ng-if-end>{{trigger.imageChangeParams.from.name}}:{{trigger.imageChangeParams.tag}}</dd>
+  </dl>
+  <h3>Replication Settings</h3>
+  <dl class="dl-horizontal">
+    <dt>Replicas</dt>
+    <dd>{{resource.template.controllerTemplate.replicas}}</dd>   
+  </dl>
+  <h4>Selector</h4>
+  <dl class="dl-horizontal">
+    <dt ng-repeat-start="(selectorKey, selectorValue) in resource.template.controllerTemplate.replicaSelector">{{selectorKey}}</dt>
+    <dd ng-repeat-end>{{selectorValue}}</dd>
+  </dl>  
+  <kubernetes-object-describe-pod-template template="resource.template.controllerTemplate.podTemplate.desiredState.manifest"></kubernetes-object-describe-pod-template>  
+  <kubernetes-object-describe-labels resource="resource"></kubernetes-object-describe-labels>
+  <kubernetes-object-describe-annotations resource="resource"></kubernetes-object-describe-annotations>
+  <kubernetes-object-describe-footer resource="resource"></kubernetes-object-describe-footer>
+</div>

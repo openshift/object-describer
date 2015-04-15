@@ -24,6 +24,9 @@
 <body ng-app="exampleApp" style="margin-left: 10px;">
     <h1>Build describer</h1>
     <kubernetes-object-describer resource="openshiftExampleBuild" more-details-link="example/path/to/more/details.htm" kind="Build"></kubernetes-object-describer>
+    <hr />
+    <h1>Deployment Config describer</h1>
+    <kubernetes-object-describer resource="openshiftExampleDeploymentConfig" more-details-link="example/path/to/more/details.htm" kind="DeploymentConfig"></kubernetes-object-describer>    
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/angular/angular.js"></script>
@@ -33,6 +36,7 @@
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="fixtures/build.js"></script>
+        <script src="fixtures/deploymentConfig.js"></script>
         <script src="object-describer.js"></script>
         <!-- endbuild -->
 
@@ -40,6 +44,7 @@
         angular.module('exampleApp', ['openshiftUI'])
             .run(function($rootScope) {
                 $rootScope.openshiftExampleBuild = window.EXAMPLE_BUILD;
+                $rootScope.openshiftExampleDeploymentConfig = window.EXAMPLE_DEP_CONFIG;
             });
     </script>
 </body>

@@ -24,7 +24,7 @@ angular.module('kubernetesUI').run(['$templateCache', function($templateCache) {
 
   $templateCache.put('views/build.html',
     "<div>\n" +
-    "  <kubernetes-object-describe-header resource=\"resource\"></kubernetes-object-describe-header>\n" +
+    "  <kubernetes-object-describe-header resource=\"resource\" kind=\"kind\"></kubernetes-object-describe-header>\n" +
     "  <dl class=\"dl-horizontal\">\n" +
     "    <dt>Name</dt>\n" +
     "    <dd>{{resource.metadata.name}}</dd>\n" +
@@ -101,7 +101,7 @@ angular.module('kubernetesUI').run(['$templateCache', function($templateCache) {
 
   $templateCache.put('views/deployment-config.html',
     "<div>\n" +
-    "  <kubernetes-object-describe-header resource=\"resource\"></kubernetes-object-describe-header>\n" +
+    "  <kubernetes-object-describe-header resource=\"resource\" kind=\"kind\"></kubernetes-object-describe-header>\n" +
     "  <dl class=\"dl-horizontal\">\n" +
     "    <dt>Name</dt>\n" +
     "    <dd>{{resource.metadata.name}}</dd>\n" +

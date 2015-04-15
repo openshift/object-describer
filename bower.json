@@ -24,7 +24,7 @@
     "dist/object-describer.js"
   ],
   "dependencies": {
-    "kubernetes-object-describer": "~0.0.3"
+    "kubernetes-object-describer": "~0.0.4"
   },
   "devDependencies": {
     "bootstrap": "~3.3.4"

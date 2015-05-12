@@ -27,6 +27,8 @@
     <hr />
     <h1>Deployment Config describer</h1>
     <kubernetes-object-describer resource="openshiftExampleDeploymentConfig" more-details-link="example/path/to/more/details.htm" kind="DeploymentConfig"></kubernetes-object-describer>    
+    <h1>Route describer</h1>
+    <kubernetes-object-describer resource="openshiftExampleRoute" more-details-link="example/path/to/more/details.htm" kind="Route"></kubernetes-object-describer>
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/angular/angular.js"></script>
@@ -37,6 +39,7 @@
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="fixtures/build.js"></script>
         <script src="fixtures/deploymentConfig.js"></script>
+        <script src="fixtures/route.js"></script>
         <script src="dist/object-describer.js"></script>
         <!-- endbuild -->
 
@@ -45,6 +48,7 @@
             .run(function($rootScope) {
                 $rootScope.openshiftExampleBuild = window.EXAMPLE_BUILD;
                 $rootScope.openshiftExampleDeploymentConfig = window.EXAMPLE_DEP_CONFIG;
+                $rootScope.openshiftExampleRoute = window.EXAMPLE_ROUTE;
             });
     </script>
 </body>

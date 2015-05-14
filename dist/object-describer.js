@@ -18,7 +18,9 @@ angular.module('openshiftUI')
 .run(function(KubernetesObjectDescriber) {
   KubernetesObjectDescriber.registerKind("Build", "views/build.html")
   KubernetesObjectDescriber.registerKind("DeploymentConfig", "views/deployment-config.html")
+  KubernetesObjectDescriber.registerKind("Route", "views/route.html")
 });
+
 angular.module('kubernetesUI').run(['$templateCache', function($templateCache) {
   'use strict';
 
@@ -132,6 +134,44 @@ angular.module('kubernetesUI').run(['$templateCache', function($templateCache) {
     "  <kubernetes-object-describe-annotations resource=\"resource\"></kubernetes-object-describe-annotations>\n" +
     "  <kubernetes-object-describe-footer resource=\"resource\"></kubernetes-object-describe-footer>\n" +
     "</div>"
+  );
+
+
+  $templateCache.put('views/route.html',
+    "<div>\n" +
+    "  <kubernetes-object-describe-header resource=\"resource\" kind=\"kind\"></kubernetes-object-describe-header>\n" +
+    "  <dl class=\"dl-horizontal\">\n" +
+    "    <dt>Name</dt>\n" +
+    "    <dd>{{resource.metadata.name}}</dd>\n" +
+    "    <dt>Namespace</dt>\n" +
+    "    <dd>{{resource.metadata.namespace}}</dd>\n" +
+    "    <dt>Created</dt>\n" +
+    "    <dd>{{resource.metadata.creationTimestamp}}</dd>\n" +
+    "    <dt>Host</dt>\n" +
+    "    <dd>{{resource.host}}</dd>\n" +
+    "    <dt>Path</dt>\n" +
+    "    <dd>{{resource.path || 'None'}}</dd>\n" +
+    "    <dt>Service Name</dt>\n" +
+    "    <dd>{{resource.serviceName}}</dd>\n" +
+    "  </dl>\n" +
+    "  <div ng-if=\"resource.tls && resource.tls.termination\">\n" +
+    "    <dl class=\"dl-horizontal\">\n" +
+    "      <dt>TLS Termination</dt>\n" +
+    "      <dd>{{resource.tls.termination}}</dd>\n" +
+    "      <dt>Certificate</dt>\n" +
+    "      <dd>{{(resource.tls.certificate) ? '*****' : 'None'}}</dd>\n" +
+    "      <dt>Key</dt>\n" +
+    "      <dd>{{(resource.tls.key) ? '*****' : 'None'}}</dd>\n" +
+    "      <dt>CA Certificate</dt>\n" +
+    "      <dd>{{(resource.tls.caCertificate) ? '*****' : 'None'}}</dd>\n" +
+    "      <dt>Destination CA Cert</dt>\n" +
+    "      <dd>{{(resource.tls.destinationCACertificate) ? '*****' : 'None'}}</dd>\n" +
+    "    </dl>\n" +
+    "  </div>\n" +
+    "  <kubernetes-object-describe-labels resource=\"resource\"></kubernetes-object-describe-labels>\n" +
+    "  <kubernetes-object-describe-annotations resource=\"resource\"></kubernetes-object-describe-annotations>\n" +
+    "  <kubernetes-object-describe-footer resource=\"resource\"></kubernetes-object-describe-footer>\n" +
+    "</div>\n"
   );
 
 }]);

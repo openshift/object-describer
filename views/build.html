@@ -6,7 +6,7 @@
     <dt>Namespace</dt>
     <dd>{{resource.metadata.namespace}}</dd>
     <dt>Created</dt>
-    <dd>{{resource.metadata.creationTimestamp}}</dd>
+    <dd>{{resource.metadata.creationTimestamp | date:'medium'}}</dd>
   </dl>  
   <h3>Build Configuration</h3>
   <dl class="dl-horizontal" style="margin-bottom: 0;">
@@ -58,12 +58,12 @@
     <dd>{{resource.status}}</dd>
     <dt>Started</dt>
     <dd>
-      <span ng-if="resource.startTimestamp">{{resource.startTimestamp}}</span>
+      <span ng-if="resource.startTimestamp">{{resource.startTimestamp | date:'medium'}}</span>
       <span ng-if="!resource.startTimestamp"><em>not started</em></span>
     </dd>
     <dt>Completed</dt>
     <dd>
-      <span ng-if="resource.completionTimestamp">{{resource.completionTimestamp}}</span>
+      <span ng-if="resource.completionTimestamp">{{resource.completionTimestamp | date:'medium'}}</span>
       <span ng-if="!resource.completionTimestamp"><em>not complete</em></span>
     </dd>
   </dl>

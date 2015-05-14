@@ -33,7 +33,7 @@ angular.module('kubernetesUI').run(['$templateCache', function($templateCache) {
     "    <dt>Namespace</dt>\n" +
     "    <dd>{{resource.metadata.namespace}}</dd>\n" +
     "    <dt>Created</dt>\n" +
-    "    <dd>{{resource.metadata.creationTimestamp}}</dd>\n" +
+    "    <dd>{{resource.metadata.creationTimestamp | date:'medium'}}</dd>\n" +
     "  </dl>  \n" +
     "  <h3>Build Configuration</h3>\n" +
     "  <dl class=\"dl-horizontal\" style=\"margin-bottom: 0;\">\n" +
@@ -85,19 +85,19 @@ angular.module('kubernetesUI').run(['$templateCache', function($templateCache) {
     "    <dd>{{resource.status}}</dd>\n" +
     "    <dt>Started</dt>\n" +
     "    <dd>\n" +
-    "      <span ng-if=\"resource.startTimestamp\">{{resource.startTimestamp}}</span>\n" +
+    "      <span ng-if=\"resource.startTimestamp\">{{resource.startTimestamp | date:'medium'}}</span>\n" +
     "      <span ng-if=\"!resource.startTimestamp\"><em>not started</em></span>\n" +
     "    </dd>\n" +
     "    <dt>Completed</dt>\n" +
     "    <dd>\n" +
-    "      <span ng-if=\"resource.completionTimestamp\">{{resource.completionTimestamp}}</span>\n" +
+    "      <span ng-if=\"resource.completionTimestamp\">{{resource.completionTimestamp | date:'medium'}}</span>\n" +
     "      <span ng-if=\"!resource.completionTimestamp\"><em>not complete</em></span>\n" +
     "    </dd>\n" +
     "  </dl>\n" +
     "  <kubernetes-object-describe-labels resource=\"resource\"></kubernetes-object-describe-labels>\n" +
     "  <kubernetes-object-describe-annotations resource=\"resource\"></kubernetes-object-describe-annotations>\n" +
     "  <kubernetes-object-describe-footer resource=\"resource\"></kubernetes-object-describe-footer>\n" +
-    "</div>"
+    "</div>\n"
   );
 
 
@@ -110,7 +110,7 @@ angular.module('kubernetesUI').run(['$templateCache', function($templateCache) {
     "    <dt>Namespace</dt>\n" +
     "    <dd>{{resource.metadata.namespace}}</dd>\n" +
     "    <dt>Created</dt>\n" +
-    "    <dd>{{resource.metadata.creationTimestamp}}</dd>\n" +
+    "    <dd>{{resource.metadata.creationTimestamp | date:'medium'}}</dd>\n" +
     "  </dl>\n" +
     "  <h3>Triggers</h3>\n" +
     "  <dl class=\"dl-horizontal\" ng-repeat=\"trigger in resource.triggers\">\n" +
@@ -133,7 +133,7 @@ angular.module('kubernetesUI').run(['$templateCache', function($templateCache) {
     "  <kubernetes-object-describe-labels resource=\"resource\"></kubernetes-object-describe-labels>\n" +
     "  <kubernetes-object-describe-annotations resource=\"resource\"></kubernetes-object-describe-annotations>\n" +
     "  <kubernetes-object-describe-footer resource=\"resource\"></kubernetes-object-describe-footer>\n" +
-    "</div>"
+    "</div>\n"
   );
 
 
@@ -146,7 +146,7 @@ angular.module('kubernetesUI').run(['$templateCache', function($templateCache) {
     "    <dt>Namespace</dt>\n" +
     "    <dd>{{resource.metadata.namespace}}</dd>\n" +
     "    <dt>Created</dt>\n" +
-    "    <dd>{{resource.metadata.creationTimestamp}}</dd>\n" +
+    "    <dd>{{resource.metadata.creationTimestamp | date:'medium'}}</dd>\n" +
     "    <dt>Host</dt>\n" +
     "    <dd>{{resource.host}}</dd>\n" +
     "    <dt>Path</dt>\n" +

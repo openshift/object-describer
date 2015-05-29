@@ -8,24 +8,24 @@
     <dt>Created</dt>
     <dd>{{resource.metadata.creationTimestamp | date:'medium'}}</dd>
     <dt>Host</dt>
-    <dd>{{resource.host}}</dd>
+    <dd>{{resource.spec.host}}</dd>
     <dt>Path</dt>
-    <dd>{{resource.path || 'None'}}</dd>
-    <dt>Service Name</dt>
-    <dd>{{resource.serviceName}}</dd>
+    <dd>{{resource.spec.path || 'None'}}</dd>
+    <dt>To</dt>
+    <dd>{{resource.spec.to.kind}} {{resource.spec.to.name}}</dd>
   </dl>
-  <div ng-if="resource.tls && resource.tls.termination">
+  <div ng-if="resource.spec.tls.termination">
     <dl class="dl-horizontal">
       <dt>TLS Termination</dt>
-      <dd>{{resource.tls.termination}}</dd>
+      <dd>{{resource.spec.tls.termination}}</dd>
       <dt>Certificate</dt>
-      <dd>{{(resource.tls.certificate) ? '*****' : 'None'}}</dd>
+      <dd>{{(resource.spec.tls.certificate) ? '*****' : 'None'}}</dd>
       <dt>Key</dt>
-      <dd>{{(resource.tls.key) ? '*****' : 'None'}}</dd>
+      <dd>{{(resource.spec.tls.key) ? '*****' : 'None'}}</dd>
       <dt>CA Certificate</dt>
-      <dd>{{(resource.tls.caCertificate) ? '*****' : 'None'}}</dd>
+      <dd>{{(resource.spec.tls.caCertificate) ? '*****' : 'None'}}</dd>
       <dt>Destination CA Cert</dt>
-      <dd>{{(resource.tls.destinationCACertificate) ? '*****' : 'None'}}</dd>
+      <dd>{{(resource.spec.tls.destinationCACertificate) ? '*****' : 'None'}}</dd>
     </dl>
   </div>
   <kubernetes-object-describe-labels resource="resource"></kubernetes-object-describe-labels>

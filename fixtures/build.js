@@ -1,20 +1,18 @@
 window.EXAMPLE_BUILD = {
-  "kind": "Build",
-  "apiVersion": "v1beta1",
   "metadata": {
     "name": "ruby-sample-build-1",
-    "namespace": "test",
-    "selfLink": "/osapi/v1beta1/builds/ruby-sample-build-1?namespace=test",
-    "uid": "3905d694-e208-11e4-bdc4-54ee75107c12",
-    "resourceVersion": "161",
-    "creationTimestamp": "2015-04-13T18:09:27Z",
+    "namespace": "project1",
+    "selfLink": "/osapi/v1beta3/namespaces/project1/builds/ruby-sample-build-1",
+    "uid": "02ba97be-0620-11e5-82b1-0aa865aec90d",
+    "resourceVersion": "369",
+    "creationTimestamp": "2015-05-29T16:30:25Z",
     "labels": {
       "buildconfig": "ruby-sample-build",
       "name": "ruby-sample-build",
       "template": "application-template-stibuild"
     }
   },
-  "parameters": {
+  "spec": {
     "source": {
       "type": "Git",
       "git": {
@@ -22,28 +20,32 @@ window.EXAMPLE_BUILD = {
       }
     },
     "strategy": {
-      "type": "STI",
-      "stiStrategy": {
-        "builderImage": "openshift/ruby-20-centos7:latest",
-        "image": "openshift/ruby-20-centos7:latest"
+      "type": "Source",
+      "sourceStrategy": {
+        "from": {
+          "kind": "DockerImage",
+          "name": "openshift/ruby-20-centos7:latest"
+        },
+        "incremental": true
       }
     },
     "output": {
       "to": {
-        "kind": "ImageStream",
-        "name": "origin-ruby-sample"
-      },
-      "dockerImageReference": "172.30.73.77:5000/test/origin-ruby-sample",
-      "imageTag": "test/origin-ruby-sample",
-      "registry": "172.30.73.77:5000"
-    }
+        "kind": "ImageStreamTag",
+        "name": "origin-ruby-sample:latest"
+      }
+    },
+    "resources": {}
   },
-  "status": "Complete",
-  "startTimestamp": "2015-04-13T18:09:30Z",
-  "completionTimestamp": "2015-04-13T18:11:30Z",
-  "config": {
-    "kind": "BuildConfig",
-    "namespace": "test",
-    "name": "ruby-sample-build"
+  "status": {
+    "phase": "Complete",
+    "startTimestamp": "2015-05-29T16:30:27Z",
+    "completionTimestamp": "2015-05-29T16:31:46Z",
+    "duration": 79000000000,
+    "config": {
+      "kind": "BuildConfig",
+      "namespace": "project1",
+      "name": "ruby-sample-build"
+    }
   }
 };

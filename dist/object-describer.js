@@ -92,7 +92,7 @@ angular.module('kubernetesUI').run(['$templateCache', function($templateCache) {
     "    <dt>Completed</dt>\n" +
     "    <dd>\n" +
     "      <span ng-if=\"resource.status.completionTimestamp\">{{resource.status.completionTimestamp | date:'medium'}}</span>\n" +
-    "      <span ng-if=\"!resource.completionTimestamp\"><em>not complete</em></span>\n" +
+    "      <span ng-if=\"!resource.status.completionTimestamp\"><em>not complete</em></span>\n" +
     "    </dd>\n" +
     "  </dl>\n" +
     "  <kubernetes-object-describe-labels resource=\"resource\"></kubernetes-object-describe-labels>\n" +

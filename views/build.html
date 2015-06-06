@@ -65,7 +65,7 @@
     <dt>Completed</dt>
     <dd>
       <span ng-if="resource.status.completionTimestamp">{{resource.status.completionTimestamp | date:'medium'}}</span>
-      <span ng-if="!resource.completionTimestamp"><em>not complete</em></span>
+      <span ng-if="!resource.status.completionTimestamp"><em>not complete</em></span>
     </dd>
   </dl>
   <kubernetes-object-describe-labels resource="resource"></kubernetes-object-describe-labels>

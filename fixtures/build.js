@@ -2,7 +2,7 @@ window.EXAMPLE_BUILD = {
   "metadata": {
     "name": "ruby-sample-build-1",
     "namespace": "project1",
-    "selfLink": "/osapi/v1beta3/namespaces/project1/builds/ruby-sample-build-1",
+    "selfLink": "/oapi/v1/namespaces/project1/builds/ruby-sample-build-1",
     "uid": "02ba97be-0620-11e5-82b1-0aa865aec90d",
     "resourceVersion": "369",
     "creationTimestamp": "2015-05-29T16:30:25Z",

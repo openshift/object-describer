@@ -2,7 +2,7 @@ window.EXAMPLE_ROUTE = {
   "metadata": {
     "name": "route-edge",
     "namespace": "project1",
-    "selfLink": "/osapi/v1beta3/namespaces/project1/routes/route-edge",
+    "selfLink": "/oapi/v1/namespaces/project1/routes/route-edge",
     "uid": "01e344a7-0620-11e5-82b1-0aa865aec90d",
     "resourceVersion": "252",
     "creationTimestamp": "2015-05-29T16:30:24Z",

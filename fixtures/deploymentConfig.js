@@ -2,7 +2,7 @@ window.EXAMPLE_DEP_CONFIG = {
   "metadata": {
     "name": "database",
     "namespace": "project1",
-    "selfLink": "/osapi/v1beta3/namespaces/project1/deploymentconfigs/database",
+    "selfLink": "/oapi/v1/namespaces/project1/deploymentconfigs/database",
     "uid": "01e61193-0620-11e5-82b1-0aa865aec90d",
     "resourceVersion": "263",
     "creationTimestamp": "2015-05-29T16:30:24Z",

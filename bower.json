@@ -1,6 +1,6 @@
 {
   "name": "openshift-object-describer",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Provides extensions to the kubernetes-object-describer for OpenShift's resources.",
   "moduleType": [
     "globals"
@@ -25,7 +25,7 @@
     "dist/object-describer.js"
   ],
   "dependencies": {
-    "kubernetes-object-describer": "1.0.1"
+    "kubernetes-object-describer": "1.0.2"
   },
   "devDependencies": {
     "bootstrap": "~3.3.4"

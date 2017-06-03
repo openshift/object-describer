@@ -1,6 +1,6 @@
 {
-  "name": "object-describer",
-  "version": "0.0.1",
+  "name": "kubernetes-object-describer",
+  "version": "1.1.4",
   "description": "Provides extensions to the kubernetes-object-describer for OpenShift's resources.",
   "repository": {
     "type": "git",
